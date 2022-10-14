@@ -6,4 +6,11 @@
 .parent {
     background-color: whitesmoke;
 	background: url('https://yugen-web.vercel.app/assets/cloud-lh.svg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    padding: 0 2em;
 }
