@@ -1,0 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.parent {
+    background-color: whitesmoke;
+	background: url('https://yugen-web.vercel.app/assets/cloud-lh.svg');
+}
