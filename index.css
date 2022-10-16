@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 70px;
+    height: 100px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     list-style: none;
     background-color: white;
@@ -61,17 +61,43 @@
 }
 
 .intro {
-    margin-top: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.intro-left {
+    margin-top: 30px;
     display: flex;
     align-items: flex-start;
-    justify-content: end;
+    justify-content: start;
     flex-direction: column;
     height: 100%;
     padding-left: 60px;
     text-align: start;
     line-height: 65px;
+    flex: 0.4;
 }
 
-.intro div > span {
-    font-size: 70px;
+.intro-left div > span {
+    font-size: 5em;
+}
+
+.intro-right {
+    flex: 0.6;
+    background: url('https://doimages.nyc3.digitaloceanspaces.com/cloudJourneyImage.svg') no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+.break-image {
+    height: 50vh;
+    background-color: greenyellow;
+    background: url('https://www.digitalocean.com/_next/static/media/footerWave.40ccbc0c.svg') no-repeat;
+    background-size: contain;
+}
+
+.footer {
+    height: 30vh;
 }
