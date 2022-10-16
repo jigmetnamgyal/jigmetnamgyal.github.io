@@ -94,14 +94,3 @@
     background-size: 500px;
     background-position: center;
 }
-
-.break-image {
-    height: 50vh;
-    background-color: greenyellow;
-    background: url('images/hero.png') no-repeat;
-    background-size: contain;
-}
-
-.footer {
-    height: 30vh;
-}

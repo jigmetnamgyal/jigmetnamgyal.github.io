@@ -1,0 +1,142 @@
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  box-sizing: border-box;
+  background: url('https://yugen-web.vercel.app/assets/cloud-lh.svg');
+}
+
+.profile-card {
+  background-color: #fff;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
+}
+
+.banner {
+  background-image: url("images/banner.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 11rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.avatar {
+    width: 7rem;
+    height: 7rem;
+    background: url('images/avatar.png') no-repeat;
+    background-size: cover;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    border-radius: 50%;
+    transform: translateY(50%);
+    transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+
+.avatar:hover {
+  transform: translateY(50%) scale(1.3);
+  cursor: pointer;
+}
+
+.profile-card h2.name {
+  text-align: center;
+  padding: 0 2rem 0.5rem;
+  margin-top: 70px;
+  margin-bottom: 0;
+}
+
+.title {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0 2rem 1.2rem;
+}
+
+.actions {
+  padding: 0 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  order: 99;
+}
+
+.follow-info {
+  padding: 0 0 1rem;
+  display: flex;
+}
+
+.follow-info h2 {
+  text-align: center;
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.follow-info h2 a {
+  text-decoration: none;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  transition: background-color 100ms ease-in-out;
+}
+
+.follow-info h2 a span {
+  color: #1c9eff;
+  font-weight: bold;
+  transform-origin: bottom;
+  transform: scaleY(1.3);
+  transition: color 100ms ease-in-out;
+}
+
+.follow-info h2 a small {
+  color: #afafaf;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.social-info h2 a:hover {
+  background-color: #f2f2f2;
+}
+
+.social-info {
+    width: 100%;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+
+.social-info button {
+    border: none;
+    height: 40px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.social-info button:hover {
+    background-color: #06D6A0;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+.desc {
+  text-align: justify;
+  padding: 0 2rem 2.5rem;
+  order: 100;
+}
+
+.desc p {
+    font-size: 13px;
+}
