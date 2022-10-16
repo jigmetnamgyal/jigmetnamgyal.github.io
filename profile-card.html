@@ -5,9 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card</title>
+    <script
+			src="https://kit.fontawesome.com/d0a44e439a.js"
+			crossorigin="anonymous"
+	></script>
     <link rel="stylesheet" href="profile-card.css" />
+    <link rel="stylesheet" href="index.css" />
 </head>
-<body>
+<body class="parent">
+    <nav class="nav-container">
+        <ul class="nav">
+          <li><a href="/">About</a></li>
+          <li><a href="/profile-card.html">Profile Card</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Skills</a></li>
+        </ul>
+      </nav>
+
     <div class="profile-card">
         <div class="banner">
             <div class="avatar"></div>
@@ -16,8 +30,26 @@
         <div class="title">Backend Developer <br />ADA University</div>
         <div class="actions">
             <div class="social-info">
-                <button>Email</button>
-                <button>LinkedIn</button>
+                <button>
+                    <a
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    href="mailto:jnamgyal11150@ada.edu.az"
+                    >
+                    <i class="fa-regular fa-envelope"></i>
+                    Email
+                </a>
+                </button>
+                <button>
+                <a
+                rel="noreferrer noopener"
+                target="_blank"
+                href="https://www.linkedin.com/in/jigme-tashi-namgyal-511a811a3/"
+                >
+                <i class="fa-brands fa-linkedin"></i>
+                Linkedin
+                </a>
+                </button>
             </div>
         </div>
         <div class="desc">
@@ -56,6 +88,12 @@
                 href="https://www.linkedin.com/in/jigme-tashi-namgyal-511a811a3/"
                 ><i class="fa-brands fa-linkedin"></i
             ></a>
+            <a
+            rel="noreferrer noopener"
+            target="_blank"
+            href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
         </div>
     </div>
 </body>

@@ -1,23 +1,12 @@
-body {
-  font-size: 16px;
-  margin: 0;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
-  box-sizing: border-box;
-  background: url('https://yugen-web.vercel.app/assets/cloud-lh.svg');
-}
-
 .profile-card {
-  background-color: #fff;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
+    margin-top: 4rem;
+    background-color: #fff;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
 }
 
 .banner {
@@ -129,7 +118,12 @@ body {
     background-color: #06D6A0;
     transform: scale(1.1);
     cursor: pointer;
-  }
+}
+
+.social-info > button > a {
+    text-decoration: none;
+    color: white;
+}
 
 .desc {
   text-align: justify;
@@ -139,4 +133,23 @@ body {
 
 .desc p {
     font-size: 13px;
+}
+
+.socials {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 218, 218);
+    order: 200;
+    font-size: 1.2rem;
+}
+.socials i {
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 500ms;
+}
+.socials a {
+    text-decoration: none;
+    color: black;
 }
