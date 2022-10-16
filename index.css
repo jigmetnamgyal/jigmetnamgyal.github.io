@@ -49,7 +49,7 @@
 
 .nav a:hover {
     color:white;
-    background: #06D6A0;
+    background: cornflowerblue;
     transition: all 0.5s ease;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .intro-left div > p > span {
-    color: #06D6A0;
+    color: cornflowerblue;
 }
 
 .intro-right {
