@@ -94,3 +94,17 @@
     background-size: 500px;
     background-position: center;
 }
+
+@media only screen and (max-width: 980px) {
+    .intro-left {
+        flex: 1;
+    }
+    .intro-left div > p {
+        font-size: 2.5rem;
+        line-height: 50px;
+    }
+
+    .intro-right {
+        display: none;
+    }
+}
