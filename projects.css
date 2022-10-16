@@ -1,6 +1,7 @@
 .project-parent {
     background: url('https://yugen-web.vercel.app/assets/cloud-lh.svg');
 }
+
 .project-content {
     display: flex;
     justify-content: center;
