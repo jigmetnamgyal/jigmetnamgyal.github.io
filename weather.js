@@ -1,12 +1,3 @@
-// const showTime = () => {
-//     const dateObject = new Date()
-
-//     let formattedString = dateObject.getHours() + ":" + dateObject.getMinutes() + ":" + dateObject.getSeconds()
-//     document.getElementById("time").innerHTML = formattedString;
-// }
-
-// setInterval(showTime, 1000);
-
 window.onload = () => {
 	getDetailForCurrentLocation();
 };
@@ -127,22 +118,9 @@ const windDirection = (degree) => {
 	return "northern";
 };
 
-const changeHtmlContent = (data) => {
+const changeHtmlContent = async (data) => {
 	window.location.href = "#";
-	let country = getCountry(data.sys.country);
-
-	country.then(
-		(result) => {
-			document.getElementById(
-				"place-name"
-			).innerHTML = `${result[0].name.common}, ${data.sys.country}`;
-
-      document.getElementById("country-name").innerHTML = `${result[0].name.common}`;
-		},
-		(error) => {
-			console.log(error);
-		}
-	);
+	let country = await getCountry(data.sys.country);
 
 	document.getElementById("main-temp").innerHTML = `${data.main.temp}°C`;
 	document.getElementById("humidity").innerHTML = `${data.main.humidity}%`;
@@ -159,6 +137,10 @@ const changeHtmlContent = (data) => {
 		"max-temp-value"
 	).innerHTML = `${data.main.temp_max}°C`;
 
+  document.getElementById(
+		"real-feel-value"
+	).innerHTML = `${data.main.feels_like}°C`;
+
 	document.getElementById("wind-speed").innerHTML = `${
 		data.wind.speed
 	} m/s ${windDirection(data.wind.deg)}`;
@@ -167,6 +149,19 @@ const changeHtmlContent = (data) => {
 		"weather-description-value"
 	).innerHTML = `${data.weather[0].description}`;
 
-  console.log(data.weather[0])
   document.getElementById("weather-type").innerHTML = `${data.weather[0].main}`;
+
+  document.getElementById(
+    "place-name"
+  ).innerHTML = `${country[0].name.common}, ${data.sys.country}`;
+
+  document.getElementById("country-name").innerHTML = `${country[0].name.common}`;
+  document.getElementById("date-time-country").innerHTML = `${unixTimeConverter(data.dt)}`
+  console.log(unixTimeConverter(data.dt))
 };
+
+function unixTimeConverter(data){
+  let unix_timestamp = data; 
+  var date = new Date(unix_timestamp * 1000); 
+  return date; 
+}
