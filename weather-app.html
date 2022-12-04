@@ -70,23 +70,37 @@
             </div>
             <div class="location-container">
                 <button class="location-button">
-                    <a class="btn" href="#open-modal">Change City </a>
+                    <a class="btn" href="#open-modal-change-city">Change City </a>
                 </button>
 
                 <button class="location-button">
-                    <a class="btn" href="#open-modal">Change latitude and longitude</a>
+                    <a class="btn" href="#open-modal-lat-long">Change latitude and longitude</a>
                 </button>
 
                 <button class="location-button">
-                    <a class="btn" href="#open-modal">Change latitude and longitude</a>
-                    
+                    <a class="btn">Current Location</a>
                 </button>
             </div>
 
-            <div id="open-modal" class="modal-window">
+            <div id="open-modal-change-city"" class="modal-window">
                 <div>
-                  <a href="#" title="Close" class="modal-close">Close</a>
-                  <h1>Voilà!</h1>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+                    <h1>Change City:</h1>
+                    <input class="location-input" type="text" id="changecity" name="changecity"><br><br>
+                    <button class="location-button">
+                        <a class="btn">Change City </a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="open-modal-lat-long"" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+                    <h1>Change Latitude and Longitude</h1>
+                    <input class="location-input" type="text" id="changelatlong" name="changelatlong"><br><br>
+                    <button class="location-button">
+                        <a class="btn">Change Latitude and Longitude </a>
+                    </button>
                 </div>
             </div>
         </div>
