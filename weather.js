@@ -8,8 +8,8 @@
 // setInterval(showTime, 1000);
 
 window.onload = () => {
-  getDetailForCurrentLocation();
-}
+	getDetailForCurrentLocation();
+};
 
 const getWeatherData = async (city) => {
 	try {
@@ -36,8 +36,11 @@ const getWeatherWithCoordinates = async (latitude, longitude) => {
 const success = async (pos) => {
 	const coordinates = pos.coords;
 
-  try {
-		const data = await getWeatherWithCoordinates(coordinates.latitude, coordinates.longitude);
+	try {
+		const data = await getWeatherWithCoordinates(
+			coordinates.latitude,
+			coordinates.longitude
+		);
 		changeHtmlContent(data);
 	} catch (error) {
 		console.log(error);
@@ -56,9 +59,20 @@ const getDetailForCurrentLocation = () => {
 	};
 
 	if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error, options)
+		navigator.geolocation.getCurrentPosition(success, error, options);
 	} else {
 		alert("Geolocation is not supported by this browser.");
+	}
+};
+
+const getCountry = async (country) => {
+	try {
+		const countryDetails = await fetch(
+			`https://restcountries.com/v3.1/alpha/${country}`
+		);
+		return await countryDetails.json();
+	} catch (error) {
+		console.error;
 	}
 };
 
@@ -68,7 +82,6 @@ const getDetailsFromCoordinates = async () => {
 
 	try {
 		const data = await getWeatherWithCoordinates(latitude, longitude);
-		console.log(data);
 		changeHtmlContent(data);
 	} catch (error) {
 		console.log(error);
@@ -116,6 +129,21 @@ const windDirection = (degree) => {
 
 const changeHtmlContent = (data) => {
 	window.location.href = "#";
+	let country = getCountry(data.sys.country);
+
+	country.then(
+		(result) => {
+			document.getElementById(
+				"place-name"
+			).innerHTML = `${result[0].name.common}, ${data.sys.country}`;
+
+      document.getElementById("country-name").innerHTML = `${result[0].name.common}`;
+		},
+		(error) => {
+			console.log(error);
+		}
+	);
+
 	document.getElementById("main-temp").innerHTML = `${data.main.temp}°C`;
 	document.getElementById("humidity").innerHTML = `${data.main.humidity}%`;
 
