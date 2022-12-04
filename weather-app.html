@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="weather-app.css" />
+    <title>Document</title>
+</head>
+  
+<body class="parent">
+    <nav class="nav-container">
+        <ul class="nav">
+          <li><a href="/">About</a></li>
+          <li><a href="/profile-card.html">Profile Card</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/skills.html">Skills</a></li>
+          <li><a href="/weather-app.html">Weather</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="weather-side">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+                <h2 class="date-dayname" id="place-name">Tuesday</h2>
+                <span class="location" id="date-time-country"></span>
+            </div>
+            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <h1 class="weather-temp" id="main-temp"></h1>
+                <h3 class="weather-desc" id="weather-type"></h3>
+                <h4 class="weather-desc" id="weather-description-value"></h4>
+            </div>
+        </div>
+        <div class="info-side">
+            <div class="today-info-container">
+                <div class="today-info">
+                    <div class="country"> <span class="title">Country</span><span class="value" id="country-name"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="humidity"> <span class="title">Humidity</span><span class="value" id="humidity"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="wind"> <span class="title">WIND</span><span class="value" id="wind-speed"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="wind"> <span class="title">Pressure</span><span class="value" id="pressure"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="wind"> <span class="title">Time</span><span class="value"></span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="week-container">
+                <ul class="week-list">
+                    <li class="active"><span class="day-name" >Min Temp</span><span class="day-temp" id="min-temp-value"></span></li>
+                    <li><span class="day-name">Max Temp</span><span class="day-temp" id="max-temp-value"></span></li>
+                    <li><span class="day-name">Real Feel</span><span class="day-temp" id="real-feel-value"></span></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="location-container">
+                <button class="location-button">
+                    <a class="btn" href="#open-modal-change-city">Change City </a>
+                </button>
+
+                <button class="location-button">
+                    <a class="btn" href="#open-modal-lat-long">Change latitude and longitude</a>
+                </button>
+
+                <button class="location-button" onclick="getDetailForCurrentLocation()">
+                    <a class="btn">Current Location</a>
+                </button>
+            </div>
+
+            <div id="open-modal-change-city"" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+                    <h1>Change City:</h1>
+                    <input class="location-input" type="text" id="change-city" name="change-city"><br><br>
+                    <button class="location-button" id="city-change" onclick="getCityLocationDetails()">
+                        <a class="btn">Change City </a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="open-modal-lat-long"" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+                    <h1>Change Latitude and Longitude</h1>
+                    <label for="changeLat">Latitude:</label>
+                    <input class="location-input" type="text" id="changeLat" name="changeLat"><br><br>
+                    <label for="changeLong">Longitude:</label>
+                    <input class="location-input" type="text" id="changeLong" name="changeLong"><br><br>
+                    <button class="location-button" id="lat-and-long-change" onclick="getDetailsFromCoordinates()">
+                        <a class="btn">Change Latitude and Longitude </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/weather.js"></script>
+</body>
+</html>
