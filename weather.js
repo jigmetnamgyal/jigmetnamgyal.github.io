@@ -17,15 +17,42 @@ const getWeatherData = async (city) => {
   }
 }
 
+const getWeatherWithCoordinates = async (latitude, longitude) => {
+  try {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=7f0485700e5e455faf216f5cf7c38659&units=metric`); 
+    return await response.json()
+} catch (error) {
+    console.error
+}
+}
+
 const getCityLocationDetails = async () => {
-  let city = document.getElementById('changecity').value
+  let city = document.getElementById('change-city').value
 
   try {
-      const weather = await getWeatherData(city); 
-      console.log(weather); 
+      const data = await getWeatherData(city); 
+      console.log(data); 
+      window.location.href = "#"
+      document.getElementById('main-temp').innerHTML = `${data.main.temp}°C`
+      document.getElementById('pressure').innerHTML = `${data.main.pressure} Pascal`
+      document.getElementById('humidity').innerHTML = `${data.main.humidity}%`
+      document.getElementById('min-temp-value').innerHTML = `${data.main.temp_min}°C`
+      document.getElementById('max-temp-value').innerHTML = `${data.main.temp_max}°C`
+      document.getElementById('wind-speed').innerHTML = `${data.wind.speed} m/s ${windDirection(data.wind.deg)}`
+      document.getElementById('weather-description-value').innerHTML = `${data.weather[0].description}`
   } catch (error) {
       console.log(error); 
   }
+}
 
-  window.location.href = "#"
+const windDirection = (degree) => {
+  if (degree > 337.5) {return 'northern'}; 
+  if (degree > 292.5) {return 'northwestern'}; 
+  if (degree > 247.5) {return 'west'}; 
+  if (degree > 202.5) {return 'southwestern'}; 
+  if (degree > 157.5) {return 'southern'}; 
+  if (degree > 122.5) {return 'southeastern'}; 
+  if (degree > 67.5) {return 'eastern'}; 
+  if (degree > 22.5) {return 'northeastern'}; 
+  return 'northern'; 
 }

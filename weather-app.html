@@ -29,8 +29,8 @@
                 <span class="location">Paris, FR</span>
             </div>
             <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
-                <h1 class="weather-temp">29°C</h1>
-                <h3 class="weather-desc">Sunny</h3>
+                <h1 class="weather-temp" id="main-temp">29°C</h1>
+                <h3 class="weather-desc" id="weather-description-value">Sunny</h3>
             </div>
         </div>
         <div class="info-side">
@@ -39,19 +39,19 @@
                     <div class="country"> <span class="title">Country</span><span class="value">United State Of America</span>
                         <div class="clear"></div>
                     </div>
-                    <div class="min-temp"> <span class="title">Min. Temp</span><span class="value">34 %</span>
+                    <!-- <div class="min-temp"> <span class="title">Min. Temp</span><span class="value">34 %</span>
                         <div class="clear"></div>
                     </div>
                     <div class="max-temp"> <span class="title">Max. Temp</span><span class="value">34 %</span>
                         <div class="clear"></div>
-                    </div>
-                    <div class="humidity"> <span class="title">Humidity</span><span class="value">34 %</span>
+                    </div> -->
+                    <div class="humidity"> <span class="title">Humidity</span><span class="value" id="humidity">34 %</span>
                         <div class="clear"></div>
                     </div>
-                    <div class="wind"> <span class="title">WIND</span><span class="value">0 km/h</span>
+                    <div class="wind"> <span class="title">WIND</span><span class="value" id="wind-speed">0 km/h</span>
                         <div class="clear"></div>
                     </div>
-                    <div class="wind"> <span class="title">Pressure</span><span class="value">0 km/h</span>
+                    <div class="wind"> <span class="title">Pressure</span><span class="value" id="pressure">0 km/h</span>
                         <div class="clear"></div>
                     </div>
                     <div class="wind"> <span class="title">Time</span><span class="value">0 km/h</span>
@@ -62,8 +62,8 @@
             <div class="week-container">
                 <ul class="week-list">
                     <!-- <li class="active"><span class="day-name">Tue</span><span class="day-temp">29°C</span></li> -->
-                    <li class="active"><span class="day-name">Min Temp</span><span class="day-temp">21°C</span></li>
-                    <li><span class="day-name">Max Temp</span><span class="day-temp">08°C</span></li>
+                    <li class="active"><span class="day-name" >Min Temp</span><span class="day-temp" id="min-temp-value">21°C</span></li>
+                    <li><span class="day-name">Max Temp</span><span class="day-temp" id="max-temp-value">08°C</span></li>
                     <!-- <li><span class="day-name">Fry</span><span class="day-temp">19°C</span></li> -->
                     <div class="clear"></div>
                 </ul>
@@ -86,7 +86,7 @@
                 <div>
                     <a href="#" title="Close" class="modal-close">Close</a>
                     <h1>Change City:</h1>
-                    <input class="location-input" type="text" id="changecity" name="changecity"><br><br>
+                    <input class="location-input" type="text" id="change-city" name="change-city"><br><br>
                     <button class="location-button" id="city-change">
                         <a class="btn" onclick="getCityLocationDetails()">Change City </a>
                     </button>
