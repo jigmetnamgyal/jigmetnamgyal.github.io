@@ -7,9 +7,9 @@
 
 // setInterval(showTime, 1000);
 
-// window.onload = () => {
-
-// }
+window.onload = () => {
+  getDetailForCurrentLocation();
+}
 
 const getWeatherData = async (city) => {
 	try {
@@ -33,16 +33,43 @@ const getWeatherWithCoordinates = async (latitude, longitude) => {
 	}
 };
 
+const success = async (pos) => {
+	const coordinates = pos.coords;
+
+  try {
+		const data = await getWeatherWithCoordinates(coordinates.latitude, coordinates.longitude);
+		changeHtmlContent(data);
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+const error = (err) => {
+	console.log(err.message);
+};
+
+const getDetailForCurrentLocation = () => {
+	const options = {
+		enableHighAccuracy: true,
+		timeout: 5000,
+		maximumAge: 0,
+	};
+
+	if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error, options)
+	} else {
+		alert("Geolocation is not supported by this browser.");
+	}
+};
+
 const getDetailsFromCoordinates = async () => {
 	let latitude = document.getElementById("changeLat").value;
 	let longitude = document.getElementById("changeLong").value;
 
-  console.log(latitude)
-  console.log(longitude)
-  try {
+	try {
 		const data = await getWeatherWithCoordinates(latitude, longitude);
-    console.log(data)
-    changeHtmlContent(data)
+		console.log(data);
+		changeHtmlContent(data);
 	} catch (error) {
 		console.log(error);
 	}
@@ -53,7 +80,7 @@ const getCityLocationDetails = async () => {
 
 	try {
 		const data = await getWeatherData(city);
-    changeHtmlContent(data)
+		changeHtmlContent(data);
 	} catch (error) {
 		console.log(error);
 	}
@@ -90,19 +117,24 @@ const windDirection = (degree) => {
 const changeHtmlContent = (data) => {
 	window.location.href = "#";
 	document.getElementById("main-temp").innerHTML = `${data.main.temp}°C`;
+	document.getElementById("humidity").innerHTML = `${data.main.humidity}%`;
+
 	document.getElementById(
 		"pressure"
 	).innerHTML = `${data.main.pressure} Pascal`;
-	document.getElementById("humidity").innerHTML = `${data.main.humidity}%`;
+
 	document.getElementById(
 		"min-temp-value"
 	).innerHTML = `${data.main.temp_min}°C`;
+
 	document.getElementById(
 		"max-temp-value"
 	).innerHTML = `${data.main.temp_max}°C`;
+
 	document.getElementById("wind-speed").innerHTML = `${
 		data.wind.speed
 	} m/s ${windDirection(data.wind.deg)}`;
+
 	document.getElementById(
 		"weather-description-value"
 	).innerHTML = `${data.weather[0].description}`;
