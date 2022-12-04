@@ -153,11 +153,10 @@ const changeHtmlContent = async (data) => {
 
   document.getElementById(
     "place-name"
-  ).innerHTML = `${country[0].name.common}, ${data.sys.country}`;
+  ).innerHTML = `${country[0].name.official}, ${data.sys.country}`;
 
-  document.getElementById("country-name").innerHTML = `${country[0].name.common}`;
+  document.getElementById("country-name").innerHTML = `${country[0].name.official}`;
   document.getElementById("date-time-country").innerHTML = `${unixTimeConverter(data.dt)}`
-  console.log(unixTimeConverter(data.dt))
 };
 
 function unixTimeConverter(data){
