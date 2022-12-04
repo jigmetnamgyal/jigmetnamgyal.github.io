@@ -166,4 +166,7 @@ const changeHtmlContent = (data) => {
 	document.getElementById(
 		"weather-description-value"
 	).innerHTML = `${data.weather[0].description}`;
+
+  console.log(data.weather[0])
+  document.getElementById("weather-type").innerHTML = `${data.weather[0].main}`;
 };
