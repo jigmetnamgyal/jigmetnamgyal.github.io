@@ -97,9 +97,12 @@
                 <div>
                     <a href="#" title="Close" class="modal-close">Close</a>
                     <h1>Change Latitude and Longitude</h1>
-                    <input class="location-input" type="text" id="changelatlong" name="changelatlong"><br><br>
+                    <label for="changeLat">Latitude:</label>
+                    <input class="location-input" type="text" id="changeLat" name="changeLat"><br><br>
+                    <label for="changeLong">Longitude:</label>
+                    <input class="location-input" type="text" id="changeLong" name="changeLong"><br><br>
                     <button class="location-button" id="lat-and-long-change">
-                        <a class="btn">Change Latitude and Longitude </a>
+                        <a class="btn" onclick="getDetailsFromCoordinates()">Change Latitude and Longitude </a>
                     </button>
                 </div>
             </div>
